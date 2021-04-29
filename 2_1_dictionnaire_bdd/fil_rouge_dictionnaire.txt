@@ -8,8 +8,9 @@ produits
     pro_mod_date
 
 
-fournisseurs (constructeurs ou importeurs)
+fournisseurs 
     fou_nom
+    fou_type   (constructeurs ou importeurs) 
     fou_ville
     fou_pays
     fou_adresse
@@ -63,4 +64,8 @@ commandes
 ligne de commande
     lig_reduction
     lig_qty     (quantité de la commande)
+
+facture
+    fac_ref     (référence)
+    fac_designation
 
