@@ -1,0 +1,66 @@
+produits
+    pro_lib_court   (libellé court)
+    pro_lib_long    (libellé long)
+    pro_fou_ref     (référence fournisseur)
+    pro_photo
+    pro_pri_achat     
+    pro_adjout_date
+    pro_mod_date
+
+
+fournisseurs (constructeurs ou importeurs)
+    fou_nom
+    fou_ville
+    fou_pays
+    fou_adresse
+    fou_cp
+    fou_mail    (email)
+    fou_nom_contact
+    fou_contact_phone
+
+
+categories + sous-categories 
+    cat_name  
+
+employees
+    emp_nom
+    emp_prenom
+    emp_poste
+    emp_adresse
+    emp_cp
+    emp_mail
+    emp_phone
+    emp_mot_pass
+
+clients (particulier ou professionel)
+    cli_nom
+    cli_prenom
+    cli_adresse
+    cli_cp      (code postal)
+    cli_ville
+    cli_mail
+    cli_phone
+    cli_mot_pass
+    cli_ins_date    (date d'inscription)
+
+commercials
+    rep_nom
+    rep_prenom
+    rep_adresse
+    rep_cp
+    rep_ville
+    rep_mail
+    rep_phone
+
+commandes
+    com_com_date    (date de commande)
+    com_pay_date    (date de payement)
+    com_exp_date    (date d'expédition)
+    com_liv_date    (date de livraison)
+    com_status
+    
+
+ligne de commande
+    lig_reduction
+    lig_qty     (quantité de la commande)
+
