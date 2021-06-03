@@ -66,7 +66,7 @@ CREATE TABLE employees(
    Id_poste INT NOT NULL COMMENT 'ID de poste',
    PRIMARY KEY(Id_employees),
    FOREIGN KEY(Id_poste) REFERENCES poste(Id_poste)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE clients(
    Id_clients INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé de la table clients',
@@ -81,61 +81,61 @@ CREATE TABLE clients(
    cli_ins_date DATETIME,
    cli_type VARCHAR(50) NOT NULL COMMENT `Le type du client (particulier ou professionel`,
    cli_ref VARCHAR(50) NOT NULL COMMENT `Le référence du client`,
-   cli_coefficient BYTE,
-   Id_employees INT NOT NULL ,
+   cli_coefficient DECIMAL COMMENT `Le coefficient du client`,
+   Id_employees INT NOT NULL COMMENT `Numéro d'identification employé`,
    PRIMARY KEY(Id_clients),
    FOREIGN KEY(Id_employees) REFERENCES employees(Id_employees)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE commandes(
-   Id_commandes COUNTER,
-   com_com_date DATETIME,
-   com_pay_date DATETIME,
-   com_exp_date DATETIME,
-   com_status VARCHAR(50),
-   com_type_paiement VARCHAR(50) NOT NULL,
-   com_prix_total DECIMAL(15,2),
-   com_discount INT,
-   com_facture_date DATE,
-   com_facture_adresse VARCHAR(255) NOT NULL,
-   Id_clients INT NOT NULL,
+   Id_commandes UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé de la table commandes',
+   com_com_date DATETIME COMMENT `La date de commande`,
+   com_pay_date DATETIME COMMENT `La date de paiement`,
+   com_exp_date DATETIME COMMENT `La date d'expédition`,
+   com_status VARCHAR(50) COMMENT `Le statut de la commande`,
+   com_type_paiement VARCHAR(50) NOT NULL COMMENT `Le type de paiement (à la commande ou en différé)`,
+   com_prix_total DECIMAL(15,2) COMMENT `Le prix total de la commande`,
+   com_discount INT COMMENT `La remise de la commande`,
+   com_facture_date DATE COMMENT `La date de la facture`,
+   com_facture_adresse VARCHAR(255) NOT NULL COMMENT `L'adresse de facturation`,
+   Id_clients INT NOT NULL COMMENT `Numéro d'identification client`,
    PRIMARY KEY(Id_commandes),
    FOREIGN KEY(Id_clients) REFERENCES clients(Id_clients)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE ligne_de_commande(
-   Id_ligne_de_commande COUNTER,
-   lico_qty INT,
-   lico_uni_prix DECIMAL(15,2),
-   Id_commandes INT NOT NULL,
-   Id_produits INT NOT NULL,
+   Id_ligne_de_commande UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé de la table ligne de commande',
+   lico_qty INT COMMENT `La quantité de produits sur la commande`,
+   lico_uni_prix DECIMAL(15,2) COMMENT `Prix unitaire du produit`,
+   Id_commandes INT NOT NULL COMMENT `Numéro d'identification commande`,
+   Id_produits INT NOT NULL COMMENT `Numéro d'identification produit`,
    PRIMARY KEY(Id_ligne_de_commande),
    FOREIGN KEY(Id_commandes) REFERENCES commandes(Id_commandes),
    FOREIGN KEY(Id_produits) REFERENCES produits(Id_produits)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE saisir(
-   Id_produits INT,
-   Id_employees INT,
-   sai_date DATETIME,
-   sai_description TEXT,
+   Id_produits INT COMMENT `Numéro d'identification produit`,
+   Id_employees INT COMMENT `Numéro d'identification employé`,
+   sai_date DATETIME COMMENT `Date de saisie des données produit`,
+   sai_description TEXT COMMENT `Déscription du produit`,
    PRIMARY KEY(Id_produits, Id_employees),
    FOREIGN KEY(Id_produits) REFERENCES produits(Id_produits),
    FOREIGN KEY(Id_employees) REFERENCES employees(Id_employees)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;;
 
 CREATE TABLE gérer(
-   Id_employees INT,
-   Id_fournisseurs INT,
+   Id_employees INT COMMENT `Numéro d'identification employé`,
+   Id_fournisseurs INT COMMENT `Numéro d'identification fournisseur`,
    PRIMARY KEY(Id_employees, Id_fournisseurs),
    FOREIGN KEY(Id_employees) REFERENCES employees(Id_employees),
    FOREIGN KEY(Id_fournisseurs) REFERENCES fournisseurs(Id_fournisseurs)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;;
 
 CREATE TABLE livrer(
-   Id_ligne_de_commande INT,
-   Id_livraison INT,
+   Id_ligne_de_commande INT COMMENT `Numéro d'identification ligne de commande`,
+   Id_livraison INT COMMENT `Numéro d'identification livraison`,
    PRIMARY KEY(Id_ligne_de_commande, Id_livraison),
    FOREIGN KEY(Id_ligne_de_commande) REFERENCES ligne_de_commande(Id_ligne_de_commande),
    FOREIGN KEY(Id_livraison) REFERENCES livraison(Id_livraison)
-);
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8;;
