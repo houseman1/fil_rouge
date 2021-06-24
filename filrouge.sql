@@ -228,7 +228,7 @@ CREATE TABLE commandes(
    com_com_date DATE COMMENT "La date de commande",
    com_pay_date DATE COMMENT "La date de paiement",
    com_exp_date DATE COMMENT "La date d'expédition",
-   com_status VARCHAR(50) COMMENT "Le statut de la commande",
+   com_status BOOLEAN COMMENT "Le statut de la commande : livrée totalement(1), livrée partiellement(0)",
    com_type_paiement VARCHAR(50) NOT NULL COMMENT "Le type de paiement (à la commande ou en différé)",
    com_prix_total DECIMAL(15,2) COMMENT "Le prix total de la commande",
    com_discount INT COMMENT "La remise de la commande",
@@ -240,13 +240,13 @@ CREATE TABLE commandes(
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `commandes`(`Id_commandes`, `com_com_date`, `com_pay_date`, `com_exp_date`, `com_status`, `com_type_paiement`, `com_prix_total`, `com_discount`, `com_facture_date`, `com_facture_adresse`, `Id_clients`) VALUES
-(1, '2018-01-15',  '2019-01-15', '2019-01-15', 'livrée totalement' ,'en cours','4270.00',10,'2019-01-15','10 rue des corbak AMIENS 80000',3),
-(2, '2018-03-18', '2019-01-15', '2019-01-15', 'livrée partiellement' ,'soldée','6400.00',15,'2019-01-15','7882 Luctus Rue Lonquimay 45354', 3),
-(3, '2018-05-21',  null, '2018-10-15', 'livrée totalement' ,'soldée','2200.00',0,'2018-10-20','CP 394, 7305 Risus. Route Lunel 68624', 1),
-(4, '2018-07-24',  '2018-11-15', '2018-10-15','livrée partiellement' ,'soldée','800.00',5,'2018-10-17','226-6532 Convallis Avenue Bhilai 62534', 2),
-(5, '2021-06-03', '2021-07-10', '2021-06-23','livrée partiellement'  ,'soldée','1450.00',7,null,'3831 Eu Route Portland 29059',  2),
-(6, '2018-11-30', '2018-12-15', '2018-12-15','livrée totalement' ,'soldée','330.00',10,'2018-12-20','9969 Aliquet Route Coevorden 40616', 1),
-(7, '2018-12-22',  '2019-01-15', '2019-01-15','livrée totalement' ,'en cours','420.00',20,'2019-01-17', 'Appartement 691-6161 Non Rue Jacksonville 94276',  3);
+(1, '2018-01-15',  '2019-01-15', '2019-01-15', 1,'en cours','4270.00',10,'2019-01-15','10 rue des corbak AMIENS 80000',3),
+(2, '2018-03-18', '2019-01-15', '2019-01-15', 0,'soldée','6400.00',15,'2019-01-15','7882 Luctus Rue Lonquimay 45354', 3),
+(3, '2018-05-21',  null, '2018-10-15', 1,'soldée','2200.00',0,'2018-10-20','CP 394, 7305 Risus. Route Lunel 68624', 1),
+(4, '2018-07-24',  '2018-11-15', '2018-10-15',0,'soldée','800.00',5,'2018-10-17','226-6532 Convallis Avenue Bhilai 62534', 2),
+(5, '2021-06-03', '2021-07-10', '2021-06-23', 0,'soldée','1450.00',7,null,'3831 Eu Route Portland 29059',  2),
+(6, '2018-11-30', '2018-12-15', '2018-12-15', 1,'soldée','330.00',10,'2018-12-20','9969 Aliquet Route Coevorden 40616', 1),
+(7, '2018-12-22',  '2019-01-15', '2019-01-15', 1,'en cours','420.00',20,'2019-01-17', 'Appartement 691-6161 Non Rue Jacksonville 94276',  3);
 
 
 
