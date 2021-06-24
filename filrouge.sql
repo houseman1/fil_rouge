@@ -9,11 +9,11 @@ CREATE TABLE fournisseurs(
    fou_ville VARCHAR(50) COMMENT 'Ville du fournisseur',
    fou_pays VARCHAR(50) COMMENT 'Pays du fournisseur',
    fou_adresse VARCHAR(255) COMMENT 'Adresse du fournisseur',
-   fou_cp INT(5) UNSIGNED COMMENT 'Code postal du fournisseur',
-   fou_mail VARCHAR(255) COMMENT 'Adresse e-mail du fournisseur',
+   fou_cp VARCHAR(10) UNSIGNED COMMENT 'Code postal du fournisseur', -- Le code postal français est de 5 chiffres, mais à l'étranger il peut être plus long et inclure des lettres
+   fou_mail VARCHAR(50) COMMENT 'Adresse e-mail du fournisseur',
    fou_nom_contact VARCHAR(50) COMMENT 'Le nom de contact chez le fournisseur',
-   fou_contact_phone VARCHAR(15) COMMENT 'Le numéro de téléphone du contact chez le fournisseur',
-   fou_type VARCHAR(50) COMMENT 'Le type de fournisseur (constructeurs ou importateurs)',
+   fou_contact_phone VARCHAR(10) COMMENT 'Le numéro de téléphone du contact chez le fournisseur',
+   fou_type BOOLEAN COMMENT 'Le type de fournisseur (constructeurs(1) ou importateurs(0))',
    PRIMARY KEY(Id_fournisseurs)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -133,7 +133,7 @@ CREATE TABLE produits(
    pro_fou_ref VARCHAR(50) COMMENT 'Référence du fournisseur',
    pro_photo VARCHAR(50) COMMENT 'Photo du produit',
    pro_pri_achat DECIMAL(15,2) COMMENT 'Prix du produit',
-   pro_stock INT UNSIGNED COMMENT 'quantité de produit dans le stock',
+   pro_stock INT(10) UNSIGNED COMMENT 'quantité de produit dans le stock',
    pro_bloque BOOLEAN COMMENT 'Produit bloqué au moment d achat',
    Id_fournisseurs_pro INT(10) UNSIGNED NOT NULL COMMENT 'ID du fournisseur',
    Id_categories_pro INT(10) UNSIGNED  NOT NULL COMMENT 'ID de la catégorie',
@@ -158,12 +158,12 @@ CREATE TABLE employees(
    emp_nom VARCHAR(50) COMMENT "Nom de l'employé",
    emp_prenom VARCHAR(50) COMMENT "Prénom de l'employe",
    emp_adresse VARCHAR(255) COMMENT "Adresse de l'employé",
-   emp_cp VARCHAR(50) COMMENT "Code postal de l'employé",
+   emp_cp VARCHAR(10) COMMENT "Code postal de l'employé", -- Le code postal français est de 5 chiffres, mais à l'étranger il peut être plus long et inclure des lettres
    emp_ville VARCHAR(50) COMMENT "la ville où l'employé habite",
    emp_mail VARCHAR(50) COMMENT "Adresse e-mail de l'employé",
    emp_phone INT COMMENT "Le numéro de téléphone de l'employé",
-   emp_mot_pass VARCHAR(60) COMMENT "Le mot de passe de l'employé",
-   emp_dat_embauche date COMMENT " la date d'ambauche de l'employé",
+   emp_mot_pass VARCHAR(255) COMMENT "Le mot de passe de l'employé", --Le hachage du mot de passe nécessite au moins 60 caractères dans le bdd
+   emp_dat_embauche DATE COMMENT " la date d'ambauche de l'employé",
    Id_poste INT(10) UNSIGNED NOT NULL COMMENT 'ID de poste',
    PRIMARY KEY(Id_employees),
    FOREIGN KEY(Id_poste) REFERENCES poste(Id_poste)
@@ -191,21 +191,24 @@ INSERT INTO `employees`(`Id_employees`, `emp_nom`, `emp_prenom`, `emp_adresse`, 
 
 
 
-
+-- Le code postal français est de 5 chiffres, mais à l'étranger il peut être plus long et inclure des lettres.
+-- Les numéros de téléphone français ont 10 numéros, mais à l'étranger ils peuvent en avoir plus.
+-- Lors de l'enregistrement d'un numéro de tel français (ex: 0678901234) le zéro initial va être retiré automatiquement, donc un VARCHAR est préféré.
+-- Le hachage du mot de passe nécessite au moins 60 caractères dans le bdd.
 CREATE TABLE clients(
    Id_clients INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé de la table clients',
    cli_nom VARCHAR(50) COMMENT 'Nom du client',
    cli_prenom VARCHAR(50) COMMENT 'Préom du client',
    cli_adresse VARCHAR(50) COMMENT 'Adresse du client',
-   cli_cp VARCHAR(50) COMMENT 'Code postal du client',
+   cli_cp VARCHAR(10) COMMENT 'Code postal du client', 
    cli_ville VARCHAR(50) COMMENT 'Ville du client',
    cli_mail VARCHAR(50) COMMENT 'Adresse e-mail du client',
-   cli_phone INT COMMENT 'Le numéro de téléphone du client',
-   cli_mot_pass VARCHAR(60) COMMENT 'Le mot de passe du client',
+   cli_phone INT(15) COMMENT 'Le numéro de téléphone du client', 
+   cli_mot_pass VARCHAR(255) COMMENT 'Le mot de passe du client',  
    cli_ins_date DATETIME,
-   cli_type VARCHAR(50) NOT NULL COMMENT 'le type du client (particulier ou professionel',
+   cli_type BOOLEAN NOT NULL COMMENT 'le type du client (particulier(1) ou professionel(0))',
    cli_ref VARCHAR(50) NOT NULL COMMENT 'Le référence du client',
-   cli_coefficient DECIMAL COMMENT 'Le coefficient du client',
+   cli_coefficient DECIMAL(5,3) COMMENT 'Le coefficient du client',
    Id_employees INT(10) UNSIGNED NOT NULL COMMENT "Numéro d'identification employé",
    PRIMARY KEY(Id_clients),
    FOREIGN KEY(Id_employees) REFERENCES employees(Id_employees)
@@ -225,11 +228,11 @@ INSERT INTO `clients`(`Id_clients`, `cli_nom`, `cli_prenom`, `cli_adresse`, `cli
 
 CREATE TABLE commandes(
    Id_commandes INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé de la table commandes',
-   com_com_date DATE COMMENT "La date de commande",
-   com_pay_date DATE COMMENT "La date de paiement",
-   com_exp_date DATE COMMENT "La date d'expédition",
-   com_status BOOLEAN COMMENT "Le statut de la commande : livrée totalement(1), livrée partiellement(0)",
-   com_type_paiement VARCHAR(50) NOT NULL COMMENT "Le type de paiement (à la commande ou en différé)",
+   com_com_date DATETIME COMMENT "La date de commande",
+   com_pay_date DATETIME COMMENT "La date de paiement",
+   com_exp_date DATETIME COMMENT "La date d'expédition",
+   com_status CHAR(2) COMMENT "Le statut de la commande : livrée totalement(LT), livrée partiellement(LP, annulée(AN), en cours(EC))",
+   com_type_paiement BOOLEAN NOT NULL COMMENT "Le type de paiement (à la commande(1) ou en différé(0))",
    com_prix_total DECIMAL(15,2) COMMENT "Le prix total de la commande",
    com_discount INT COMMENT "La remise de la commande",
    com_facture_date DATE COMMENT "La date de la facture",
@@ -240,13 +243,13 @@ CREATE TABLE commandes(
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `commandes`(`Id_commandes`, `com_com_date`, `com_pay_date`, `com_exp_date`, `com_status`, `com_type_paiement`, `com_prix_total`, `com_discount`, `com_facture_date`, `com_facture_adresse`, `Id_clients`) VALUES
-(1, '2018-01-15',  '2019-01-15', '2019-01-15', 1,'en cours','4270.00',10,'2019-01-15','10 rue des corbak AMIENS 80000',3),
-(2, '2018-03-18', '2019-01-15', '2019-01-15', 0,'soldée','6400.00',15,'2019-01-15','7882 Luctus Rue Lonquimay 45354', 3),
-(3, '2018-05-21',  null, '2018-10-15', 1,'soldée','2200.00',0,'2018-10-20','CP 394, 7305 Risus. Route Lunel 68624', 1),
-(4, '2018-07-24',  '2018-11-15', '2018-10-15',0,'soldée','800.00',5,'2018-10-17','226-6532 Convallis Avenue Bhilai 62534', 2),
-(5, '2021-06-03', '2021-07-10', '2021-06-23', 0,'soldée','1450.00',7,null,'3831 Eu Route Portland 29059',  2),
-(6, '2018-11-30', '2018-12-15', '2018-12-15', 1,'soldée','330.00',10,'2018-12-20','9969 Aliquet Route Coevorden 40616', 1),
-(7, '2018-12-22',  '2019-01-15', '2019-01-15', 1,'en cours','420.00',20,'2019-01-17', 'Appartement 691-6161 Non Rue Jacksonville 94276',  3);
+(1, '2018-01-15',  '2019-01-15', '2019-01-15', 'LT','en cours','4270.00',10,'2019-01-15','10 rue des corbak AMIENS 80000',3),
+(2, '2018-03-18', '2019-01-15', '2019-01-15', 'LP','soldée','6400.00',15,'2019-01-15','7882 Luctus Rue Lonquimay 45354', 3),
+(3, '2018-05-21',  null, '2018-10-15', 'LT','soldée','2200.00',0,'2018-10-20','CP 394, 7305 Risus. Route Lunel 68624', 1),
+(4, '2018-07-24',  '2018-11-15', '2018-10-15', 'LP','soldée','800.00',5,'2018-10-17','226-6532 Convallis Avenue Bhilai 62534', 2),
+(5, '2021-06-03', '2021-07-10', '2021-06-23', 'LP','soldée','1450.00',7,null,'3831 Eu Route Portland 29059',  2),
+(6, '2018-11-30', '2018-12-15', '2018-12-15', 'LT','soldée','330.00',10,'2018-12-20','9969 Aliquet Route Coevorden 40616', 1),
+(7, '2018-12-22',  '2019-01-15', '2019-01-15', 'LT','en cours','420.00',20,'2019-01-17', 'Appartement 691-6161 Non Rue Jacksonville 94276',  3);
 
 
 
