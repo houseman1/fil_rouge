@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS `village_green`;
+
+USE `village_green`;
+
 DROP TABLE IF EXISTS `fournisseurs`;
 CREATE TABLE fournisseurs(
    Id_fournisseurs INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Clé de la table fournisseurs',
