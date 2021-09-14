@@ -4,35 +4,35 @@
 --Profil gestion : lecture/écriture dans la base
 --Profil administrateur (ou développeur) : comme gestion + création et suppression d'objet
 
-USE village_green;
+USE filrouge;
 
 --Créer les rôles
 CREATE ROLE IF NOT EXISTS
-    'r_village_green_visiteur'@'%',
-    'r_village_green_client'@'%',
-    'r_village_green_gestion'@'%',
-    'r_village_green_admin'@'%';
+    'r_filrouge_visiteur'@'%',
+    'r_filrouge_client'@'%',
+    'r_filrouge_gestion'@'%',
+    'r_filrouge_admin'@'%';
 
 --Accorder (GRANT) des privilèges au rôle
 GRANT SELECT
-ON village_green.catalogue
-TO 'r_village_green_visiteur'@'%';
+ON filrouge.catalogue
+TO 'r_filrouge_visiteur'@'%';
 
 GRANT SELECT
-ON village_green.*
-TO 'r_village_green_client'@'%';
+ON filrouge.*
+TO 'r_filrouge_client'@'%';
 
 GRANT INSERT, UPDATE
-ON village_green.commandes, village_green.clients
-TO 'r_village_green_client'@'%';
+ON filrouge.commandes, filrouge.clients
+TO 'r_filrouge_client'@'%';
 
 GRANT SELECT, INSERT
-ON village_green.*
-TO 'r_village_green_gestion'@'%';
+ON filrouge.*
+TO 'r_filrouge_gestion'@'%';
 
 GRANT ALL PRIVILEGES
-ON village_green.*
-TO 'r_village_green_admin'@'%';
+ON filrouge.*
+TO 'r_filrouge_admin'@'%';
 
 --Créer les utilisateurs avec des mots de passe
 CREATE USER 'visiteur'@'%' IDENTIFIED BY 'visiteur';
@@ -41,14 +41,14 @@ CREATE USER 'gestion'@'%' IDENTIFIED BY 'gestion';
 CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';
 
 --Attribuer (GRANT) les rôle à les utilisateurs
-GRANT 'r_village_green_visiteur'@'%'
+GRANT 'r_filrouge_visiteur'@'%'
 TO 'visiteur'@'%';
 
-GRANT 'r_village_green_client'@'%'
+GRANT 'r_filrouge_client'@'%'
 TO 'client'@'%';
 
-GRANT 'r_village_green_gestion'@'%'
+GRANT 'r_filrouge_gestion'@'%'
 TO 'gestion'@'%';
 
-GRANT 'r_village_green_admin'@'%'
+GRANT 'r_filrouge_admin'@'%'
 TO 'admin'@'%';
