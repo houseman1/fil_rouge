@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e8cebeba-8c35-4dd5-a182-8cfe79da1dce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/taskapp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Common.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/App.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Boot/development.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Boot/production.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Boot/testing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Constants.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/ContentSecurityPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Cookie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/DocTypes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Email.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Encryption.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Events.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Exceptions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Filters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/ForeignCharacters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Format.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Generators.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Honeypot.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Images.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Kint.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Logger.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Migrations.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Mimes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Modules.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Pager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Paths.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Routes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Security.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Toolbar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/UserAgents.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/Validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Config/View.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Controllers/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Controllers/Home.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Database/Migrations/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Database/Seeds/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Filters/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Helpers/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Language/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Language/en/Validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Libraries/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Models/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/ThirdParty/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/cli/error_404.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/cli/error_exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/cli/production.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/html/debug.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/html/debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/html/error_404.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/html/error_exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/errors/html/production.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/Views/welcome_message.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/app/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/builds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/spark" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/_support/Database/Migrations/2020-02-22-222222_example_migration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/_support/Database/Seeds/ExampleSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/_support/DatabaseTestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/_support/Libraries/ConfigReader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/_support/Models/ExampleModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/_support/SessionTestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/database/ExampleDatabaseTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/session/ExampleSessionTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/tests/unit/HealthTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/writable/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/writable/cache/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/writable/logs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/writable/session/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskapp/writable/uploads/index.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/taskapp/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/composer" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/mikey179/vfsstream" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/codeigniter4/framework" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/kint-php/kint" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/taskapp/vendor/sebastian/object-reflector" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1yAOY6elshtT3z3dlWyCXrES36c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8080">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8cebeba-8c35-4dd5-a182-8cfe79da1dce" name="Default Changelist" comment="" />
+      <created>1631690976603</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631690976603</updated>
+      <workItem from="1631690979418" duration="694000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
