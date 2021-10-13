@@ -1,0 +1,27 @@
+.container{
+
+    background-image: url("Charte/HEADER/3 bandes.png");
+}
+
+.tous{
+    left: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-image: url("Charte/BACKGROUND/bande milieu.png");
+
+}
+body{
+
+    background-image: url("Charte/BACKGROUND/background village.png");
+}
+.parent{
+
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+Affichage de dectionnaire_filrouge (1).xlsx en cours...

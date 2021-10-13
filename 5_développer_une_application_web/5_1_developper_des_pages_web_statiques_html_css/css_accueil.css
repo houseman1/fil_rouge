@@ -1,0 +1,145 @@
+body
+{
+    font-size: 100%;
+    background-image: url("Charte/BACKGROUND/background village.png");
+}
+
+
+.tous
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: visible;
+    max-width: 1200px;
+    box-shadow: -2px 1px 8px #000;
+
+}
+
+#navbar
+{
+    align-self: flex-start;
+    justify-self: flex-end;
+    width: 100%;
+    position: relative;
+    right: 22%;
+    top: 5%;
+
+}
+
+
+
+#nav1 a
+{
+    color: midnightblue;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+#nav2
+{
+    background-color: dimgrey;
+    font-size: 1.2rem;
+}
+
+#nav2 div
+{
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 0;
+}
+
+#nav2 a
+{
+    color: #fff;
+}
+
+#nav3
+{
+    background-color: rgb(55, 55, 55);
+    font-weight: 500;
+}
+
+#nav3 a
+{
+    color: #fff;
+}
+
+#navlogo
+{
+
+    z-index: 2;
+    width: 22%;
+}
+
+#navlogo img
+{
+    z-index: 2;
+    width: 110%;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+    body
+    {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    body
+    {
+        font-size: 0.9rem;
+    }
+}
+.box{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 20px;
+}
+.imgb4{
+    margin-top: 30px;
+}
+.cat{
+    margin-top: 10px;
+    margin-left: 30px;
+    color: midnightblue;
+    font-weight:bolder ;
+}
+.flex-container{
+
+    display: flex;
+    padding-right: 10px;
+    background-color: white;
+
+}
+#categorie{
+    padding-right: 120%;
+}
+.log{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 20px;
+}
+.cat1{
+    margin-top: 10px;
+    margin-left: -288px;
+    color: midnightblue;
+    font-weight:bolder ;
+}
+
+#titre{
+    margin-left: -330px;
+}
+.fin{
+    background-image: url("Charte/FOOTER/footer.png");
+    overflow: visible;
+    max-width: 1230px;
+}
+.offre{
+    margin-top: 5px;
+}
